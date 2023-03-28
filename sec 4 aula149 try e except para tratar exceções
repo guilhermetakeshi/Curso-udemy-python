@@ -1,0 +1,35 @@
+# 149. try e except para tratar exceções
+
+#a = 18
+#b = 0
+# vai dar erro pq nao tem como dividir por 0
+# c = a/b
+# ent vc pode colocar a conta dentro do try
+try:
+    a = 18
+    b = 0 
+    print(b[0])
+    c = a/b
+    
+# o erro ainda ocorre, mas no tratamento vc só ta imprimindo 
+# uma mensagem, sem trata-lo
+#except:
+    #print('tá no except')
+    
+except ZeroDivisionError as erro:
+    print(erro.__class__.__name__)
+    print(erro)
+    
+except NameError:
+    print('Nome b não está definido')
+    
+except (TypeError, IndexError) as error:
+    print('TypeError + IndexError')
+    print('MSG:', error)
+    print('Nome:', error.__class__.__name__)
+    
+except Exception:
+    print('ERRO DESCONHECIDO.')
+
+print('CONTINUAR')
+
