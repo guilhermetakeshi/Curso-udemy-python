@@ -14,7 +14,7 @@
 
 def recursiva(inicio=0, fim=4):
 
-    print(inicio, fim)
+    #print(inicio, fim)
 
     # Caso base
     if inicio >= fim:
@@ -27,3 +27,11 @@ def recursiva(inicio=0, fim=4):
 
 
 print(recursiva())
+
+def fatorial(n):
+    if n <=1:
+        return 1
+    
+    return n * fatorial(n-1)
+    
+print(fatorial(5))
