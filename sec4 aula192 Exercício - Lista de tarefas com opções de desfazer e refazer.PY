@@ -20,7 +20,7 @@ while True:
     print('\nTAREFAS:')
     
     if tarefa in 'listarLISTAR':
-        print(*lista_completa)
+        print(*lista_completa, sep='\n')
         print('')
         continue
 
@@ -28,26 +28,27 @@ while True:
         item_deletado = lista_completa.pop()
         print('A tarefa {} foi removida da lista'.format(item_deletado))
         lista_refazer.append(item_deletado)
-        print(lista_completa)
+        print(*lista_completa, sep='\n')
         print('')
         continue
     
     elif tarefa in 'REFAZERrefazer':
         item_deletado = lista_refazer.pop()
         lista_completa.append(item_deletado)
-        print(lista_completa)
+        print(*lista_completa, sep='\n')
         print('')
         continue
-    else: 
-        lista_completa.append(tarefa)
 
-    if tarefa in 'SAIRsair':
+    elif tarefa in 'SAIRsair':
         for indice in lista_completa:
             if len(lista_completa) == 0:
                 print('Não há tarefas para listar')
             else:
+                lista_completa.pop()
                 print(indice, sep='\n', end='\n')
         break
+    else: 
+        lista_completa.append(tarefa)
     
     for indice in lista_completa:
         if len(lista_completa) == 0:
@@ -130,4 +131,3 @@ while True:
         break
   
 '''
-        
